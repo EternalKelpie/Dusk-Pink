@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>RpgGen</title>
+  </head>
+  <body>
+    <main class="container">
+      <br>
+      <br>
+        <h2 style="text-align: center;">       Website was created to help game masters with their RPG sessions</h2>
+      <br>
+      <br>    
+        <details> 
+         <summary role="button" class="outline" id="mainDunBut">   Dungeon map generator for RPG </summary>
+        <p>
+        <br>   
+        <fieldset class="grid"  style="width: 1000px; margin: 0 auto;"> 
+            <label for="rnum" style="text-align:right;"> Number of rooms: </label>
+            <input type="number" id="rnum" min="1" max="10" value="5" width="30" >
+            <button id="genButton" width="50" >Generate Map</button> 
+        </fieldset>
+        <br>
+        <fieldset class="grid"  style="width: 800px; margin: 0 auto;" > 
+           <label for="rnum" style="text-align: right;"> Include loot placement </label>
+            <input type="checkbox" role="switch" name="lootSwitch" checked id="lootSwitch" style=" margin: 0 auto; text-align: center;"></input>
+            <label for="rnum" style="text-align: right;"> Include encounter placement </label>
+            <input type="checkbox" role="switch" name="lootSwitch" checked id="monsterSwitch" style=" margin: 0 auto; text-align: center;" ></input>
+        </fieldset>
+        <br>
+        <br>
+        <br>
+
+        <section id="map">
+             <div class="dungeonMap">
+              </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        </p>
+        </details>
+        <details> 
+        <summary role="button" class="outline" id="mainCharBut">   NPC generator for RPG </summary>
+        <p>
+          Yet to be added 
+        </p>
+        </details>
+        <details> 
+        <summary role="button" class="outline" id="mainTrapBut">   Simple traps generator for RPG </summary>
+        <p>
+          Yet to be added 
+        </p>
+        </details>
+    </main>
+    <script src = "script.js"></script>
+  </body>
+</html>

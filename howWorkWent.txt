@@ -1,0 +1,20 @@
+13.10 ~2,5h
+~ hour and half spend on planning work and an hour html
+
+generator for rpg, that will create dungeons and npc
+
+dungeons:
+	- 0 WALL	1 FLOOR
+	- make grid and fill it with 0
+	- try if in certain area in grid room can be made. check if there isn't room already and if it wont border; continue until specified number of rooms achieved; need to have a list of rooms
+	- calculate  middle of two first rooms and connect them, first go down/up good amount, then to side; continue till all are done
+
+	-later entrance, exit and loot can be added
+
+Frontend:
+	- pico css to help with frontend
+	- need to make and add favicon to html
+
+14.10 
+
+~1,5 hour working on html, css and js
