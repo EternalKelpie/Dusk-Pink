@@ -1,20 +1,38 @@
 13.10 ~2,5h
-~ hour and half spend on planning work and an hour html
+	~ hour and half spend on planning work and an hour html
 
-generator for rpg, that will create dungeons and npc
+	generator for rpg, that will create dungeons and npc
 
-dungeons:
-	- 0 WALL	1 FLOOR
-	- make grid and fill it with 0
-	- try if in certain area in grid room can be made. check if there isn't room already and if it wont border; continue until specified number of rooms achieved; need to have a list of rooms
-	- calculate  middle of two first rooms and connect them, first go down/up good amount, then to side; continue till all are done
+	dungeons:
+		- 1 WALL	0 FLOOR
+		- make grid and fill it with 1
+		- try if in certain area in grid room can be made. check if there isn't room already and 	if it wont border; continue until specified number of rooms achieved; need to have a list of rooms
+	- calculate  middle of two first rooms and connect them, first go down/up good amount, then to 	side; continue till all are done
+	
+		-later entrance, exit and loot can be added
+	
+	Frontend:
+		- pico css to help with frontend
+		- need to make and add favicon to html
 
-	-later entrance, exit and loot can be added
+14.10 ~ 3h
 
-Frontend:
-	- pico css to help with frontend
-	- need to make and add favicon to html
+	~1,5 hour working on html, css and js
+	created GitHub repo
 
-14.10 
+	~1,5
+	working on python rooms generator
+	venv creation		python -m venv .venv
+	activation		.\.venv\Scripts\Activate.ps1
 
-~1,5 hour working on html, css and js
+15.10 ~1 h 15 min
+
+	~1h 15 min 
+	started with adding save and load button. for save button function is js was added, so it already 	works.
+
+17.10
+	~1 h 45 min
+	save and load button for map generation are working. Fixed a slight problem with roooms number, 	but they still overlap. 
+	Map creation is now a function
+	started with include loot and encounters 
+	

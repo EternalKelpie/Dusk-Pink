@@ -19,17 +19,18 @@
         <p>
         <br>   
         <fieldset class="grid"  style="width: 1000px; margin: 0 auto;"> 
-            <label for="rnum" style="text-align:right;"> Number of rooms: </label>
+            <label style="text-align:right;"> Number of rooms: </label>
             <input type="number" id="rnum" min="1" max="10" value="5" width="30" >
             <button id="genButton" width="50" >Generate Map</button> 
         </fieldset>
         <br>
         <fieldset class="grid"  style="width: 800px; margin: 0 auto;" > 
-           <label for="rnum" style="text-align: right;"> Include loot placement </label>
-            <input type="checkbox" role="switch" name="lootSwitch" checked id="lootSwitch" style=" margin: 0 auto; text-align: center;"></input>
-            <label for="rnum" style="text-align: right;"> Include encounter placement </label>
-            <input type="checkbox" role="switch" name="lootSwitch" checked id="monsterSwitch" style=" margin: 0 auto; text-align: center;" ></input>
+           <label   style="text-align: right;"> Include loot placement </label>
+            <input  type="checkbox" role="switch" name="lootSwitch" checked id="lootSwitch" style=" margin: 0 auto; text-align: center;"></input>
+            <label  style="text-align: right;"> Include encounter placement </label>
+            <input  type="checkbox" role="switch" name="EncounterSwitch" checked id="EncSwitch" style=" margin: 0 auto; text-align: center;" ></input>
         </fieldset>
+        
         <br>
         <br>
         <br>
@@ -38,6 +39,13 @@
              <div class="dungeonMap">
               </div>
         </section>
+         <fieldset class="grid"  style="width: 1200px; margin: 0 auto;"> 
+            <button id="LoadMapButton" width="50" >Load map</button>
+            <input type="file" accept=".json,application/json" id ="exterMap">
+            
+            <button id="SaveMapButton" width="50" >Save map</button>  
+            
+        </fieldset>
         <br>
         <br>
         <br>
