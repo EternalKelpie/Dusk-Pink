@@ -32,7 +32,7 @@ function GetMap(data, map ){
             for (const row of data.map){
                 for(const cell of row){
                     const tile = document.createElement("div");
-                    tile.className = `tile ${cell === 0 ? "floor" : "wall"}`;
+                    tile.className = `tile ${cell === 0 ? "floor" : (cell === 1 ? "wall" : (cell === 2 ? "loot" : "enc"))}`;
                     mapElementFinal.appendChild(tile);
 
                 }
@@ -59,6 +59,14 @@ function GetMap(data, map ){
                 else if (tile.classList.contains("floor"))
                 {
                     tile.style.backgroundColor = "#006d46";
+                }
+                else if (tile.classList.contains("loot"))
+                {
+                    tile.style.backgroundColor = "#c7bb0f";
+                }
+                else if (tile.classList.contains("enc"))
+                {
+                    tile.style.backgroundColor = "#8b0d0d";
                 }
 
             });
@@ -185,6 +193,7 @@ button.addEventListener("click", () =>{
 
 
     const genButton =document.getElementById("genButton");
+
     //map generation
     genButton.addEventListener("click", async () =>{
     const RoomNumber = document.getElementById("rnum");
@@ -199,7 +208,9 @@ button.addEventListener("click", () =>{
         {
             console.log("add generating loot and enc..");
         }
-        const response = await fetch(`/generate?rooms=${roomCount}`);
+        const isLoot = Loot.checked
+        const isEnc = Encounter.checked
+        const response = await fetch(`/generate?rooms=${roomCount}&isLoot=${isLoot}&isEnc=${isEnc}`);
 
         if (!response.ok) {
                 throw new Error("Could not get map.");

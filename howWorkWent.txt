@@ -35,4 +35,10 @@
 	save and load button for map generation are working. Fixed a slight problem with roooms number, 	but they still overlap. 
 	Map creation is now a function
 	started with include loot and encounters 
+
+
+
+26.10 ~45 min
+	18.25-19.10
+	added loot and encounters to map
 	

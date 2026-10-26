@@ -29,7 +29,9 @@ def load():
 @app.route('/generate')
 def generate():
     roomCount = request.args.get("rooms", default =5, type=int)
-    dungeon  = GenerateRooms(roomNumber = roomCount)
+    getIsLoot = request.args.get("isLoot", default ="true").lower() =="true"
+    getIsEnc = request.args.get("isEnc", default ="true").lower() =="true"
+    dungeon  = GenerateRooms(roomNumber = roomCount, isLoot=getIsLoot, isEnc= getIsEnc)
 
     data={
                 "map" : dungeon

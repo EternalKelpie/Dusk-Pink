@@ -2,8 +2,10 @@ import random
 
 WALL = 1
 ROOM = 0
+LOOT = 2
+ENC = 3 # encounter
 
-def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None):
+def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None, isLoot = False, isEnc = False):
     map = [[WALL for i in range(40)] for j in range(30)]       # 1 is wall, 0 will be room and corridors
     roomsCenter = []
     random.seed(seed)
@@ -54,11 +56,30 @@ def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None):
         map[y2][x2] = 1
 
         i += 1
+    if(isLoot== True):
+        for x in range(len(roomsCenter)):
+            chance= random.randint(1, 100)
+            if(chance >65):
+                paramX= random.randint(-2,2)
+                paramY = random.randint(-2, 2)
+                place = roomsCenter[x]
+                if map[place[1] + paramX][place[0] + paramY] == 0:
+                    map[place[1] + paramX] [place[0] + paramY] = 2
+    if(isEnc==True):
+        for x in range(len(roomsCenter)):
+            chance= random.randint(1, 100)
+            if(chance >55):
+                paramX= random.randint(-2,2)
+                paramY = random.randint(-2, 2)
+                place = roomsCenter[x]
+                if map[place[1] + paramY][place[0] + paramX] == 0:
+                   map[place[1] + paramY] [place[0] + paramX] = 3 
+
 
 
     return map
 
-a = GenerateRooms(42)
-for row in a:
-    print("".join("#" if cell == WALL else "o" for cell in row))
-    print()
+#a = GenerateRooms(42)
+#for row in a:
+#    print("".join("#" if cell == WALL else "o" for cell in row))
+#    print()
