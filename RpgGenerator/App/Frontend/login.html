@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>NPCGen</title>
+  </head>
+  <body>
+    <br>
+    <br>
+        <h2 style="text-align: center;">       Login to your account :</h2>
+    <br>
+    <form method="post" action="/login">
+    <fieldset class="grid"  style="width: 700px; margin: 0 auto;"> 
+            <label style="text-align:right;"> Username: </label>
+            <input type="string" id="login"  name="login" width="30" >
+    </fieldset>
+    <fieldset class="grid"  style="width: 700px; margin: 0 auto;"> 
+            <label style="text-align:right;"> Password: </label>
+            <input type="password" id="password" name="password" width="30" >
+    </fieldset>  
+        <br>
+        <button type="submit"  style="text-align: right; padding-right: 60px; width: auto; ">Login</button>  
+    </form>
+
+    <br>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <br>
+        <div style="text-align: right; padding-right: 60px;">
+            <button id="backButton" style="width: auto;">Return</button>
+        </div>
+  </body>
+</html>

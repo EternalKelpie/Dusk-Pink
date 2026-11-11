@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>NPCGen</title>
+  </head>
+  <body>
+    <br>
+    <br>
+        <h2 style="text-align: center;">       NPC generated before:</h2>
+    <br>
+    <table>
+    <tr><th>Name</th><th>Race</th><th>Job</th><th>Special appearance trait</th><th>Special character trait</th></tr>
+         {% for npc in npc %}
+          <tr><td>{{ npc[0] }}</td><td>{{ npc[1] }}</td><td>{{ npc[2] }}</td><td>{{ npc[3] }}</td><td>{{ npc[4] }}</td></tr>
+         {% endfor %}
+    </table>
+
+    <br>
+    <br>
+        <div style="text-align: right; padding-right: 60px;">
+            <button id="backButton" style="width: auto;">Return</button>
+        </div>
+    <script src = "NPCgenScript.js"></script>
+  </body>
+</html>

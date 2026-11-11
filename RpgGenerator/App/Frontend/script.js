@@ -1,3 +1,25 @@
+async function loadNPC(){
+    try{
+        const response = await fetch ('/loadNPC');
+        if(!response.ok){
+            throw new Error("Could not load NPC");
+        }
+        const data = await response.json();
+
+        document.getElementById("nameDisp").value = data.name;
+        document.getElementById("raceDisp").value = data.race;
+        document.getElementById("jobDisp").value = data.job;
+        document.getElementById("looksDisp").value = data.looks;
+        document.getElementById("traitDisp").value = data.trait;
+
+    }catch(error){
+        console.error("Error with loading files");
+    }
+
+
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 function downloadJson(data, filename){
 
     var json =JSON.stringify(data);
@@ -228,3 +250,82 @@ button.addEventListener("click", () =>{
 
 
 });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// npc creation, random generation and looking at npc created before by others
+const NpcButton = document.getElementById("mainCharBut");
+const newNpcButton = document.getElementById("newNpcButton");
+const mainCharBut = document.getElementById("mainCharBut");
+const SaveToNpcDbButton = document.getElementById("SaveToNpcDbButton");
+const UserNpcDbButton = document.getElementById("UserNpcDbButton");
+
+
+
+const name = document.getElementById("nameDisp");
+const race = document.getElementById("raceDisp");
+const job = document.getElementById("jobDisp");
+const looks = document.getElementById("looksDisp");
+const trait = document.getElementById("traitDisp"); 
+
+mainCharBut.addEventListener("click", () =>{
+    loadNPC();
+});
+
+newNpcButton.addEventListener("click", () =>{
+    window.location.href ="/createNpc"; 
+});
+
+const oldNpcButton = document.getElementById("oldNpcButton");
+
+oldNpcButton.addEventListener("click", () =>{
+    window.location.href ="/oldNpc"; 
+
+});
+
+function onClick(id, handler) {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener("click", handler);
+}
+
+onClick("SaveToNpcDbButton", async () => {
+    try {
+        const response = await fetch(`/saveNpcToDB?name=${name.value}&race=${race.value}&job=${job.value}&looks=${looks.value}&act=${trait.value}`);
+        if (!response.ok) {
+            console.error("Could not save to DB");
+        }
+    } catch (error) {
+        console.error("Error with saving NPC");
+    }
+});
+
+window.addEventListener("load", () => {
+    if (window.location.hash === "#mainCharBut") {
+        const button = document.getElementById("mainCharBut");
+
+        button.click();
+        button.scrollIntoView({ behavior: "smooth" });
+    }
+});
+
+onClick("LoginButton", () => { window.location.href = "/login"; });
+onClick("AdminPanelButton", () => { window.location.href = "/adminPanel"; });
+
+onClick("UserNpcDbButton", () => { window.location.href = "/loadUsersNpc"; });
+
+
+onClick("randNpcButton", async () => { try {
+        const response = await fetch(`/generateNpc`);
+        if (!response.ok) {
+            throw new Error("Could not get random NPC");
+        }
+        const data = await response.json();
+        document.getElementById("nameDisp").value = data.name;
+        document.getElementById("raceDisp").value = data.race;
+        document.getElementById("jobDisp").value = data.job;
+        document.getElementById("looksDisp").value = data.looks;
+        document.getElementById("traitDisp").value = data.trait;
+
+    } catch (error) {
+        console.error("Error with random NPC", error);
+    } });

@@ -9,6 +9,19 @@
   </head>
   <body>
     <main class="container">
+            <div style="text-align: right; padding-right: 60px;">
+            {% if user ==1 or user == 2%}
+            <form method="post" action="/logout">
+                <button type="submit" id="LogoutButton" style="text-align: right; padding-right: 60px; width: auto; ">Logout</button>
+            </form>
+            {%endif%} 
+              {% if user == 2%}
+                <button id="AdminPanelButton" width="20" >Admin Panel</button>
+            {%endif%}        
+            {% if user == 0%}    
+                <button id="LoginButton" width="20" >Login</button> 
+            {%endif%}    
+        </div>
       <br>
       <br>
         <h2 style="text-align: center;">       Website was created to help game masters with their RPG sessions</h2>
@@ -54,7 +67,32 @@
         <details> 
         <summary role="button" class="outline" id="mainCharBut">   NPC generator for RPG </summary>
         <p>
-          Yet to be added 
+        <fieldset class="grid"  style="width: 1000px; margin: 0 auto;"> 
+            <button id="randNpcButton" width="50" >Generate random NPC</button> 
+            <button id="newNpcButton" width="50" >Create your own NPC</button> 
+            <button id="oldNpcButton" width="50" >NPC of other players</button> 
+        </fieldset>
+        <br>
+    <h2 style="text-align: center;">             Generated NPC:</h2>
+         <fieldset style="width: 800px; margin: 0 auto;"> 
+            <label style="text-align:left;"> Name: </label>
+            <input type="string" id="nameDisp" width="30" value="Kira"  > 
+            <label style="text-align:left;"> Race: </label>
+            <input type="string" id="raceDisp" width="30" value="Ghost" > 
+            <label style="text-align:left;"> Job: </label>
+            <input type="string" id="jobDisp" width="80" value="Graveyard worker" >  
+            <label style="text-align:left;"> Special appearance trait: </label>
+            <input type="string" id="looksDisp" width="80" value="Has no eyebrows" > 
+            <label style="text-align:left;"> Special character trait: </label>
+            <input type="string" id="traitDisp" width="80" value="Walks like a cartoon villain" >
+        </fieldset>
+        <br>
+        <fieldset class="grid"  style="width: 1000px; margin: 0 auto;"> 
+          {% if user ==1 or user == 2%}
+            <button id="SaveToNpcDbButton" width="50" >Save NPC to your collection</button> 
+            <button id="UserNpcDbButton" width="50" >View your collection</button> 
+          {%endif%}
+        </fieldset>
         </p>
         </details>
         <details> 

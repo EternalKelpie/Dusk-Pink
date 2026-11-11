@@ -68,7 +68,7 @@ def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None, isLoot = Fa
     if(isEnc==True):
         for x in range(len(roomsCenter)):
             chance= random.randint(1, 100)
-            if(chance >55):
+            if(chance >50):
                 paramX= random.randint(-2,2)
                 paramY = random.randint(-2, 2)
                 place = roomsCenter[x]

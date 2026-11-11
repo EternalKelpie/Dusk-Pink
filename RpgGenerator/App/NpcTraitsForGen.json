@@ -1,0 +1,7 @@
+{
+    "name": ["Kira", "Anabelle", "Orist", "Amra", "Tannatar", "Khatar Eladi", "Queen", "Hilthyl Ianstina","Honiel", "Barbara", "Maxwell", "Jumin", "Ray" ],
+    "race": ["necromant","elf", "human", "dark elf", "dwarf", "kitsune", "orc", "half elf", "dragon hybrid", "ghost"],
+    "job": ["doctor", "mayor", "drunkyard", "story teller", "apothecary", "politician", "pub keeper", "shop keeper", "potionologist", "pediatrician", "potter", "smith", "librarian", "priest", "farmer"],
+    "looks": ["Is balding", "Is shy and covers their face", "Has many scars on face", "Has half of a face burned off", "Has heterochromia", "Has only one hand", "Carries a cup wherever they go", "Is really pale", "is really tanned","Has knee long hair", "Has no teeth"],
+    "trait": ["Is aggresive towards all non human races",  "Curses a lot", "Stutters", "Uses word 'like' too much", "Loves all dogs", "Hates all cats", "Only talks to animals", "Speaks passionatelly about their deity", "Hates all human", "Loves talking to goblins", "Smells like a pidgeon"]
+}

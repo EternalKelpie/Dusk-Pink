@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>Admin panel</title>
+  </head>
+  <body>
+    <br>
+    <br>
+        <h2 style="text-align: center;">      Panel for administration:</h2>
+    <br>
+    <h2> User table: </h2>
+    <table>
+    <tr><th>Username</th><th>Passowrd</th><th>is Admin?</th></tr>
+         {% for user in users %}
+          <tr><td>{{ user[1] }}</td><td>{{ user[2] }}</td><td>{{ user[3] }}</td><td><form method="post" action="/deleteUser/{{user[0]}}"><input type="submit" value="Delete"></form></td></tr>
+         {% endfor %}
+    </table>
+    <h2>Add User</h2>  
+                <form method=post action="/adminPanel">
+                    Login: <input type=text name=login>
+                    Password: <input type=password name=password>
+                    Admin: <input type="checkbox" name="admin"> <br>
+                    <button type="submit"  style="text-align: right; padding-right: 60px; width: auto; ">Add User</button>  
+                </form>
+
+    <br>
+    <br>
+        <div style="text-align: right; padding-right: 60px;">
+            <button id="backButton" style="width: auto;">Return</button>
+        </div>
+
+        <script src = "NPCgenScript.js"></script>
+  </body>
+</html>

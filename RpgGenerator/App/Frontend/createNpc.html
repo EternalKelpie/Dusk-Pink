@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.jade.min.css">
+    <title>NPCGen</title>
+  </head>
+  <body>
+    <br>
+    <br>
+        <h2 style="text-align: center;">       NPC creator</h2>
+    <br>
+    <br>    
+    <div>
+        <fieldset class="grid"  style="width: 1400px; margin: 0 auto; padding-right: 300px;"> 
+            <label style="text-align:right;"> Name: </label>
+            <input type="string" id="name" width="30" >
+        </fieldset>
+        <fieldset class="grid"  style="width: 1400px; margin: 0 auto; padding-right: 300px;"> 
+            <label  for = "race" style="text-align:right;"> Race: </label>
+            <select id="race" name="race">
+                <option value="elf">elf</option>
+                <option value="dark elf">dark elf</option>
+                <option value="human" selected>human</option>
+                <option value="dwarf">dwarf</option>
+                <option value="necromant">necromant</option>
+                <option value="vampire">vampire</option>
+                <option value="demon">demon</option>
+            </select>
+        </fieldset>
+        <fieldset class="grid"  style="width: 1400px; margin: 0 auto; padding-right: 300px;"> 
+            <label  for = "job" style="text-align:right;"> Job: </label>
+            <select id="job" name="job">
+                <option value="shop keeper">shop keeper</option>
+                <option value="pub keeper">pub keeper</option>
+                <option value="mayor" selected>mayor</option>
+                <option value="doctor">doctor</option>
+                <option value="smith">smith</option>
+                <option value="soldier">soldier</option>
+                <option value="farmer">farmer</option>
+                <option value="artist">artist</option>
+            </select>
+        </fieldset>
+        <fieldset class="grid"  style="width: 1400px; margin: 0 auto; padding-right: 300px;"> 
+            <label  for = "looks" style="text-align:right;"> Special appearance trait: </label>
+            <select id="looks" name="looks">
+                <option value="Has scars on face">Has scars on face</option>
+                <option value="Is balding">Is balding</option>
+                <option value="Has only one eye" selected>Has only one eye</option>
+                <option value="Wears bright colours only">Wears bright colours only</option>
+                <option value="Wears ragged clothes">Wears ragged clothes</option>
+                <option value="Has paint on clothes">Has paint on clothes</option>
+                <option value="Has freackles">Has freackles</option>
+                <option value="Has paint on clothes">Has blood on clothes</option>
+            </select>
+        </fieldset>
+        <fieldset class="grid"  style="width: 1400px; margin: 0 auto; padding-right: 300px;"> 
+            <label  for = "act" style="text-align:right;"> Special character trait: </label>
+            <select id="act" name="act">
+                <option value="Is aggresive towards all non human races">Is aggresive towards all non human races</option>
+                <option value="Looks down on those dressed poorly">Looks down on those dressed poorly</option>
+                <option value="Speaks passionatelly about their deity" selected>Speaks passionatelly about their deity</option>
+                <option value="Helps only children">Helps only children</option>
+                <option value="Loves to argue">Loves to argue</option>
+            </select>
+        </fieldset>
+        <div style="text-align: center;">
+            <button id="createButton" style="width: auto;">Create</button>
+        </div>
+    </div>
+    <br>
+    <br>
+        <div style="text-align: right; padding-right: 60px;">
+            <button id="backButton" style="width: auto;">Return</button>
+        </div>
+    <script src = "NPCgenScript.js"></script>
+  </body>
+</html>
