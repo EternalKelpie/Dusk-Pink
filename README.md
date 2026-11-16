@@ -3,7 +3,7 @@ Dusk pink is an open source web application, designed to be of use in tabletop R
 
 Application offers dungeon generation, npc creation, encounters creation and dice rolling.
 
-#Technologies
+# Technologies
 Backend: Python, Flask
 Frontend: HTML, CSS, JavaScript
 Database: SQLite
@@ -17,5 +17,5 @@ Other: Flask-Session
    python app.py
 4. Open http://127.0.0.1:5000 in your browser.
 
-#License
+# License
 This project is licensed under the MIT License. See the LICENSE file for details.
