@@ -12,21 +12,26 @@ def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None, isLoot = Fa
     readyRooms =0
     attempts = 0
     while(readyRooms< roomNumber and attempts < roomNumber + 5):
-        roomPlacementX = random.randint(1, 23)
-        roomPlacementY = random.randint(1, 23)
         roomDimension = random.randint(3, 5)
+        roomPlacementX = random.randint(1, width - roomDimension - 1)
+        roomPlacementY = random.randint(1, height - roomDimension - 1)
+        
         attempts= attempts + 1
-        if (map[roomPlacementY - 1][roomPlacementX - 1] != ROOM and map[roomPlacementY + roomDimension + 1][roomPlacementX - 1] != ROOM and map[roomPlacementY - 1][roomPlacementX + roomDimension + 1] != ROOM   and map[roomPlacementY + roomDimension + 1][roomPlacementX + roomDimension + 1] != ROOM and map[roomPlacementY + roomDimension//2][roomPlacementX + roomDimension//2] != ROOM):
-            i =0
-            while i<roomDimension:
-                j =0
-                while j<roomDimension:
-                    map[roomPlacementY +i ][roomPlacementX +j] = 0
-                    j= j+1
-                i= i+1
-            center = ( roomPlacementX + roomDimension // 2, roomPlacementY + roomDimension // 2)
+        canPlace = True
+        for y in range(roomPlacementY - 1, roomPlacementY + roomDimension +1):
+            for x in range(roomPlacementX -1, roomPlacementX + roomDimension +1):
+                if map[y][x] ==ROOM:
+                    canPlace = False
+                    break
+                if not canPlace:
+                    break
+        if canPlace:
+            for y in range(roomDimension):
+                for x in range(roomDimension):
+                    map[roomPlacementY + y][roomPlacementX +x] = ROOM
+            center = (roomPlacementX +roomDimension //2, roomPlacementY + roomDimension //2)
             roomsCenter.append(center)
-            readyRooms = readyRooms + 1
+            readyRooms+=1
 
     i = 0
     while i < len(roomsCenter) - 1:
@@ -53,7 +58,7 @@ def GenerateRooms(width = 40, height= 30, roomNumber=6, seed = None, isLoot = Fa
             else:
                 y1 -= 1
 
-        map[y2][x2] = 1
+        map[y2][x2] = ROOM
 
         i += 1
     if(isLoot== True):

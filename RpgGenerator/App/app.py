@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory, render_template, session, flash, request, redirect, url_for
 from Backend.DungeonGenerator import GenerateRooms
+from Backend.EncGenerator import getEncounter
 import json
 from pathlib import Path
 from flask_session import Session
@@ -164,6 +165,12 @@ def generate():
 
         }
     )
+
+@app.route('/generateEncounter')
+def generateEncounter():
+    encType = request.args.get("encType", default="random")
+    encounter  = getEncounter(type = encType)
+    return jsonify(encounter)
     
 # tutaj do zmian, żeby to miało sens z tym cop aktualnie mam ______________________________________________________________________
 @app.route("/login", methods=["GET", "POST"])

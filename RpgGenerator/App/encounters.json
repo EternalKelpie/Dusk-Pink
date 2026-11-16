@@ -1,0 +1,71 @@
+{
+    "social": [
+        {
+  "title": "Lost Traveler",
+  "description": "A traveler asks the party for help.",
+  "twist": "The traveler is secretly a thief.",
+  "reward": "Information about a hidden treasure."
+        },
+         {
+  "title": "Merchant",
+  "description": "Party meets a merchant named Kameleo on their way.",
+  "twist": "Merchant did not check if sold items are cursed.",
+  "reward": "None"
+        }
+
+],
+
+
+"combat":
+[
+        {
+  "title": "Feral Animals",
+  "description": "Feral and starving animals attack the party.",
+  "twist": "Combat can be omitet if animals are given food.",
+  "reward": "Gold can be found in one of creature's stomach."
+        },
+        {
+  "title": "Blind Orc",
+  "description": "Blind orc charges at the party and swings axe violently.",
+  "twist": "Orc reacts and sound.",
+  "reward": "If team quiets down and follows the orc, it will lead the party to it's hideout with treasure."
+        }
+
+],
+
+"hazard":
+[
+        {
+  "title": "Fungi Spores",
+  "description": "One party member steps accidentally on innocentky looking fungi. It shoots spores and temporarly poisons party.",
+  "twist": "Fungi is eatible.",
+  "reward": "Potentially healing food."
+        },
+        {
+  "title": "Tiles Falling Down",
+  "description": "Party member steps on a tile and one row of tiles falls down to reveal a big hole.",
+  "twist": "Hole leads to secret rooms.",
+  "reward": "Secret room"
+        }
+
+], 
+
+"puzzle":
+[
+        {
+  "title": "Sphinx",
+  "description": "The party encounters a Sphinx. They are asked three questions, if they answer, they can go further.",
+  "twist": "Sphinx accepts culinary answers.",
+  "reward": "Party can advance their jurney."
+        },
+        {
+  "title": "Magic Door",
+  "description": "A magical door blocks the passage. It has five buttons.",
+  "twist": "Buttons have to be clicked in a good order.",
+  "reward": "Party can advance their jurney."
+        }
+
+]
+
+
+}

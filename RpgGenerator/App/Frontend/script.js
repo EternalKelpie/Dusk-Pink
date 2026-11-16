@@ -294,6 +294,7 @@ onClick("SaveToNpcDbButton", async () => {
         if (!response.ok) {
             console.error("Could not save to DB");
         }
+        alert("Saved to collection!");
     } catch (error) {
         console.error("Error with saving NPC");
     }

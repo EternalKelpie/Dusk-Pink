@@ -24,7 +24,7 @@
         </div>
       <br>
       <br>
-        <h2 style="text-align: center;">       Website was created to help game masters with their RPG sessions</h2>
+        <h2 style="text-align: center;">       ✧ Website was created to help game masters with their RPG sessions ✧</h2>
       <br>
       <br>    
         <details> 
@@ -98,10 +98,127 @@
         <details> 
         <summary role="button" class="outline" id="mainTrapBut">   Simple traps generator for RPG </summary>
         <p>
-          Yet to be added 
+          <h3 style="text-align: center;"> Encounter Generator </h3 >
+            <div>
+            <section >
+             <fieldset style="width: 600px; margin: 0 auto; text-align:center ;">
+              <label  for = "EncounterType" style="text-align:center ;"> Type of encounter: </label>
+            <select id="EncounterType" name="EncounterType" style="text-align:center ;">
+                <option value="random">random</option>
+                <option value="social">social</option>
+                <option value="combat" selected>combat</option>
+                <option value="puzzle">puzzle</option>
+                <option value="hazard">hazard</option>
+            </select>
+            <button id="GenEnc">Generate Encounter</button>
+             </fieldset>
+             </section>
+              <section >
+                <hr>
+                <br>
+                <div id="encounterResultNotHide" >
+                  
+                    <p  style="text-align: center;" >Generate your own encounter!</p>
+                </div>
+                <br>
+      
+                <br>
+              <div id="encounterResult" hidden >
+                  <span class="tag" id="resultType" ></span>
+
+                    <h3 class="section-title " style="text-align:center ;">Type of Encounter</h3>
+                    <p class="encType" id="encounterType" style="text-align:center ;"></p>
+                    
+                    <h3 class="section-title"  style="text-align:center ;">Title</h3>
+                    <p class="encTitle" id="encounterTitle"  style="text-align:center ;"></p>
+
+                    <h3 class="section-title"  style="text-align:center ;">Description</h3>
+                    <p class="encDescription" id="encounterDescription"  style="text-align:center ;"></p>
+
+                    <h3 class="section-title"  style="text-align:center ;">Twist</h3>
+                    <p class="encTwist" id="encounterTwist"  style="text-align:center ;"></p>
+
+                    <h3 class="section-title"  style="text-align:center ;">Reward</h3>
+                    <p class="encReward" id="encounterReward"  style="text-align:center ;"></p>
+                    
+
+
+              </div>
+
+              </section>
+              </div>
+              <br>
+              <br>
+              <br>
+        </p>
+        </details>
+          <details> 
+        <summary role="button" class="outline" id="mainTrapBut"> Rolling the dice </summary>
+        <p>
+          <div style="display : flex;  gap: 20px; width: 100%;">
+            <section style="flex:1;">
+              <br>
+            <fieldset  style="width: 300px; margin: 0 auto;  display: flex; flex-direction: column;"> 
+            <button id="k4" width="50" >k4</button>
+            <hr> 
+            <button id="k6" width="50" >k6</button> 
+            <hr>
+            <button id="k8" width="50" >k8</button> 
+            <hr>
+            <button id="k10" width="50" >k10</button> 
+            <hr>
+            <button id="k12" width="50" >k12</button> 
+            <hr>
+            <button id="k20" width="50" >k20</button> 
+            <hr>
+            <button id="k100" width="50" >k100</button> 
+            <hr>
+            </section>
+             <section style="flex:1;">
+            <h3 >    Your own values :</h3>
+                <fieldset  class="grid" style="width: 400px; margin: 0 auto;  display: flex; flex-direction: column;">
+                  <label style="text-align:right;"> How many Dices: </label>
+                  <input type="number" id="diceNumber" min="1" step="1" value="1">
+                  <label  for = "diceType" style="text-align:right;"> Dice Type: </label>
+                    <select id="diceType" name="diceType">
+                        <option value="4">k4</option>
+                        <option value="6">k6</option>
+                        <option value="8" >k8</option>
+                        <option value="10">k10 </option>
+                        <option value="12">k12</option>
+                        <option value="20">k20</option>
+                        <option value="100">k100</option>
+                    </select>
+                      <button id="rollCusotomDiceButton" width="50" >Roll</button>
+                  </fieldset> 
+            </fieldset>
+            </section>
+            <section style="flex:1;">
+              <br>
+              <br>
+              <br>
+              <br>
+              <h3 style="text-align:center ;"> Your Roll:</h3>
+              <br>
+              <br>
+              <p class="DiceRollResult" id="RollResult"  style="text-align:center ;font-size: 50px;"></p>
+            </section>
+              <br>
+              <hr>
         </p>
         </details>
     </main>
     <script src = "script.js"></script>
+    <script src = "encScript.js"></script>
+    <script src = "rollsScript.js"></script>
   </body>
+  <footer style =" padding: 25px; text-align: center; margin-top: 50px; border-radius: 10px;">
+    <div style = "color: mediumpurple; margin-bottom: 12px;">
+       ✧ ───────── ✧ ───────── ✧
+    </div>
+    <p style ="font-style: italic; margin: 8px 0;">
+      Game master toolkit.
+      </p>
+    <small style="font-size: small; font-style: italic; ">Page created by EternalKelpie on GitHub</small> 
+  </footer>
 </html>
